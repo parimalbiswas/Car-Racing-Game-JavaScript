@@ -16,15 +16,50 @@ function start() {
     player.start = true;
     window.requestAnimationFrame(gamePlay);
 
+    let roadLine = document.createElement("div");
+    
+
     let car = document.createElement("div");
-    car.setAttribute("class","car");
+    car.setAttribute("class", "car");
     //car.innerText="Car I am";
     gameArea.appendChild(car);
+
+
+    player.x = car.offsetLeft;
+    player.y = car.offsetTop;
+
+
+    // console.log("Top Position ->"+car.offsetTop);
+    // console.log("Left Position ->"+car.offsetLeft);
 }
 
 function gamePlay() {
     console.log("Game suru");
+    let car = document.querySelector(".car");
+
+    let road = gameArea.getBoundingClientRect();
+    console.log(road);
+
     if (player.start) {
+
+        if (keys.ArrowUp && player.y > (road.top + 150)) {
+            player.y -= player.speed;
+        }
+        if (keys.ArrowDown && player.y < (road.bottom - 70)) {
+            player.y += player.speed;
+        }
+
+        if (keys.ArrowLeft && player.x > 0) {
+            player.x -= player.speed;
+        }
+        if (keys.ArrowRight && player.x < (road.width - 50)) {
+            player.x += player.speed;
+        }
+
+        car.style.top = player.y + "px";
+        car.style.left = player.x + "px";
+
+
         window.requestAnimationFrame(gamePlay);
     }
 
@@ -40,7 +75,7 @@ let keys = {
     ArrowRight: false
 }
 
-let player = {};
+let player = { speed: 9 };
 
 document.addEventListener("keydown", keydown);
 document.addEventListener("keyup", keyup);

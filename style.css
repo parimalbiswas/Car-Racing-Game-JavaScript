@@ -7,10 +7,21 @@
 }
 
 .car{
-    width: 40px;
-    height: 60px;
+    width: 50px;
+    height: 70px;
     background-color: aqua;
     position: absolute;
-    left: 50px;
-    bottom: 120px ;
+    /* left: 50px;
+    top: 120px ; */
+    bottom: 120px;
+    
+}
+
+.gameArea{
+    width: 400px;
+    height: 100vh;
+    background:#2d3436 ;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
 }
