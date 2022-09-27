@@ -18,10 +18,11 @@ function start() {
 
     for (let index = 0; index < 10; index++) {
         let roadLine = document.createElement("div");
-        roadLine.setAttribute("class","lines");
-        roadLine.style.top = (index*150) + "px";
+        roadLine.setAttribute("class", "lines");
+        roadLine.y = (index * 150);
+        roadLine.style.top = roadLine.y + "px";
         gameArea.appendChild(roadLine);
-        
+
     }
     // let roadLine = document.createElement("div");
     // roadLine.setAttribute("class","lines");
@@ -42,6 +43,19 @@ function start() {
     // console.log("Top Position ->"+car.offsetTop);
     // console.log("Left Position ->"+car.offsetLeft);
 }
+
+
+function moveLines() {
+    let lines = document.querySelectorAll(".lines");
+    lines.forEach(function (elem) {
+        elem.y += player.speed;
+        roadLine.style.top = roadLine.y + "px";
+    });
+
+}
+
+8: 27
+
 
 function gamePlay() {
     console.log("Game suru");
