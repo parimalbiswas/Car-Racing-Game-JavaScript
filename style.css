@@ -1,12 +1,13 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-.hide{
+
+.hide {
     display: none;
 }
 
-.car{
+.car {
     width: 50px;
     height: 70px;
     background-color: aqua;
@@ -14,14 +15,22 @@
     /* left: 50px;
     top: 120px ; */
     bottom: 120px;
-    
+
 }
 
-.gameArea{
+.gameArea {
     width: 400px;
     height: 100vh;
-    background:#2d3436 ;
+    background: #2d3436;
     margin: auto;
     position: relative;
     overflow: hidden;
+}
+
+.lines {
+    width: 10px;
+    height: 100px;
+    background: whitesmoke;
+    position: absolute;
+    margin-left: 195px;
 }
